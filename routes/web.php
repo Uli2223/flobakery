@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('produk', ProdukController::class);
+Route::resource('karyawan', KaryawanController::class);
+Route::resource('pelanggan', PelangganController::class);
+Route::resource('pembelian', PembelianController::class);
+Route::resource('transaksi', TransaksiController::class);
+
