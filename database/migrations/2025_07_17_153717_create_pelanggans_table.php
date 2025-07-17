@@ -9,10 +9,16 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('pelanggans', function (Blueprint $table) {
-            $table->id();
+            $table->string('id_pelanggan')->primary();
+            $table->string('nama_pelanggan');
+            $table->string('alamat');
+            $table->string('nomor_telepon');
+            $table->string('membership');
+            $table->string('id_karyawan');
+            $table->foreign('id_karyawan')->references('id_karyawan')->on('karyawans');
             $table->timestamps();
         });
     }
